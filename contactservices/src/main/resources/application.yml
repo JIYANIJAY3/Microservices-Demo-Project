@@ -1,0 +1,10 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: contect-service
+
+eureka:
+  instance:
+    hostname: localhost

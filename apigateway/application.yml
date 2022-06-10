@@ -1,0 +1,22 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+
+        - id: user-service
+          uri: lb://contect-service
+          predicates:
+              - Path=/contect/user/**
+
+eureka:
+  instance:
+    hostname: localhost
